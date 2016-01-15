@@ -21,6 +21,26 @@ public class EjemploLista {
 		//cierro Scanner
 		input.close();
 		System.out.println(listaCadenas);
+		System.out.println("¿Contiene a Pedro?"+listaCadenas.contains("Pedro"));
+		System.out.println("Numero de palabras"+listaCadenas.size());
+		if(listaCadenas.contains("Pedro")){
+			System.out.println("Esta en la pòsicion: "+listaCadenas.lastIndexOf("Pedro"));
+			if(listaCadenas.size()>0){
+			System.out.println("Primera palabra:"+listaCadenas.get(0));
+			//recorremos la lista e imprimimos las pàlabras en una unica linea
+			//forma 1:clasica
+			for (int i = 0; i < listaCadenas.size(); i++) {
+				System.out.println(listaCadenas.get(i));
+				
+			}
+			//Forma 2:bucle mejorado
+			for(String string:listaCadenas){
+				System.out.println(string);
+			}
+			//Forma3
+			listaCadenas.forEach(System.out::println);
+			}
+		}
 		
 	}
 
