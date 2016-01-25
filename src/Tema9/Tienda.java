@@ -61,6 +61,23 @@ public class Tienda {
 		}
 		//metodo que le pasamos String nombre del producto y
 		//devuelve la posicion del objeto
+		
+		
+		//metodo que elimina un producto, dado el nombre del mismo
+		public boolean eliminarProductoPorNombre(String nombre){
+			//boolean que  nos informa del exito de la operacion
+			boolean exito=false;
+			for (Producto producto : lista) {
+				if (producto.getNombreProducto().equals(nombre)) {
+					lista.remove(producto);
+					exito=true;
+					break;
+					
+				}
+				
+			}
+			return exito;
+		}
 	
 			
 			

@@ -22,6 +22,7 @@ public class TestTienda {
        Producto producto5=new Producto(3,"ps4",399.0);
        tienda.EliminarProducto(producto4);
        System.out.println(tienda.listarProductos());
+      
 	}
 
 }
