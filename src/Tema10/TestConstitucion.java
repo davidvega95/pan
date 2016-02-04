@@ -12,20 +12,32 @@ public class TestConstitucion {
 		Scanner in=new Scanner(System.in);
 		//Creamos la lista que vamos a guardar todas las palabras del fichero
 		List<String>ListaConstitucion=new ArrayList<String>();
-		String palabra;
+		
+		
+		String palabra="";
 		StringBuilder sBuilder=new StringBuilder(500);
-		int posicion=(int) (Math.random()*(ListaConstitucion.size()-1));
+		
+		int contador=0;
+		String palabraCambiada="";
 		while(in.hasNextLine()){
 			 palabra=in.nextLine();
-			 ListaConstitucion.add(palabra);
+			 palabraCambiada=palabra.replaceAll(".*[.;,:]$",palabra.substring(0,palabra.length()-1));
+			 if(palabra.toLowerCase().matches("[a-αινσϊ]+")){
+			      //System.out.println(palabra);
+				 ListaConstitucion.add(palabraCambiada);
+			 }
+			 int posicionInicial=(int) (Math.random()*(ListaConstitucion.size()-499));
+			 for (int i = posicionInicial; i < posicionInicial +500; i++) {
+				 sBuilder.append(ListaConstitucion.get(i));
+				
+			}
+			 contador++;
 			 
 		}
-		for (int i = 0; i < ListaConstitucion.size(); i++) {
-			sBuilder.append(ListaConstitucion.get(posicion));
-		}
 		
 		
-		System.out.println(ListaConstitucion);
+		System.out.println(sBuilder.toString().trim());
+		System.out.println("Numero de palabras:"+contador);
 		//Creamos el StringBuilder vacio
 		
 		
