@@ -15,7 +15,7 @@ public class TestConstitucion {
 		
 		
 		String palabra="";
-		StringBuilder sBuilder=new StringBuilder(500);
+		StringBuilder sBuilder=new StringBuilder();
 		
 		int contador=0;
 		String palabraCambiada="";
@@ -36,8 +36,19 @@ public class TestConstitucion {
 		}
 		
 		
-		System.out.println(sBuilder.toString().trim());
-		System.out.println("Numero de palabras:"+contador);
+		System.out.println("Numero de palabras: "+UtilidadesString.numeroPalabras(sBuilder.toString().trim()));
+		System.out.println("Numero de articulos determinados: "+UtilidadesString.numeroArticulosDeterminados(sBuilder.toString().trim()));
+		System.out.println("Numero de articulos indeterminados: "+UtilidadesString.numeroArticulosIndeterminados(sBuilder.toString().trim()));
+		System.out.println("Numero de preposciones : "+UtilidadesString.numeroPreposiciones(sBuilder.toString().trim()));
+		int inicio=0;
+		int fin=0;
+		while(inicio>=fin){
+			inicio=(int) (Math.random()*501);
+			fin=(int) (Math.random()*501);
+		}
+		System.out.println("Numero de palabras: "+UtilidadesString.devolverMayusculaCaracteres(inicio, fin, sBuilder.toString().trim()));
+		System.out.println("Numero de palabras: "+UtilidadesString.devolverMayusculaCaracteresFraseCompleta(inicio, fin, sBuilder.toString().trim()));
+		System.out.println("Numero de palabras:"+UtilidadesString.devolverMayusculaPalabrasFrase(inicio, fin, sBuilder.toString().trim()));
 		//Creamos el StringBuilder vacio
 		
 		
